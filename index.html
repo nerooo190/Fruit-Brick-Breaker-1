@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit Brick Breaker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <section class="frame" aria-label="Fruit Brick Breaker game">
+      <canvas id="gameCanvas" width="720" height="1280"></canvas>
+
+      <div id="hud" class="hud hidden" aria-live="polite">
+        <div class="score-block">
+          <span class="score-label">SCORE</span>
+          <span id="hudScore" class="score-value">0</span>
+        </div>
+
+        <div id="hudLives" class="life-block" aria-label="Lives"></div>
+
+        <button id="pauseBtn" class="close-btn" type="button" aria-label="Pause">×</button>
+
+        <div id="hudTime" class="timer-pill hidden"></div>
+        <div id="hudLevel" class="level-pill hidden"></div>
+      </div>
+
+      <div id="overlay" class="overlay visible">
+        <section id="screen-menu" class="screen active">
+          <h1>Fruit Brick Breaker</h1>
+          <p>Cartoon fruit chaos, multiple modes, and level select.</p>
+          <div class="button-col">
+            <button data-action="play">Play</button>
+            <button data-action="modes">Game Modes</button>
+            <button data-action="highscores">Highscores</button>
+          </div>
+        </section>
+
+        <section id="screen-modes" class="screen">
+          <h2>Select Mode</h2>
+          <div class="mode-grid" id="modeGrid"></div>
+          <button class="ghost" data-action="back-menu">Back</button>
+        </section>
+
+        <section id="screen-levels" class="screen">
+          <h2>Level Select</h2>
+          <p id="levelModeText"></p>
+          <div class="level-grid" id="levelGrid"></div>
+          <button class="ghost" data-action="back-modes">Back</button>
+        </section>
+
+        <section id="screen-level-intro" class="screen">
+          <h2 id="introTitle">Level 1</h2>
+          <p id="introSubtitle">Ready?</p>
+          <div class="intro-stats">
+            <span id="introMode">Mode: Classic</span>
+            <span id="introTarget">Objective: Clear all bricks</span>
+          </div>
+          <div class="button-col">
+            <button data-action="start-level">Start Level</button>
+            <button class="ghost" data-action="back-levels">Back to Levels</button>
+          </div>
+        </section>
+
+        <section id="screen-highscores" class="screen">
+          <h2>Highscores</h2>
+          <div id="highscoreTables" class="highscores"></div>
+          <button class="ghost" data-action="back-menu">Back</button>
+        </section>
+
+        <section id="screen-finish" class="screen">
+          <h2 id="finishTitle">Run Complete</h2>
+          <p id="finishText"></p>
+          <div class="button-col">
+            <button data-action="play-again">Play Again</button>
+            <button class="ghost" data-action="back-menu">Main Menu</button>
+          </div>
+        </section>
+
+        <section id="screen-name" class="screen">
+          <h2>New Highscore</h2>
+          <p>Enter your name for the leaderboard.</p>
+          <form id="nameForm">
+            <input id="nameInput" maxlength="14" value="PLAYER" aria-label="Name" />
+            <button type="submit">Save Score</button>
+          </form>
+        </section>
+
+        <section id="screen-pause" class="screen">
+          <h2>Paused</h2>
+          <p>Press <strong>P</strong> to continue.</p>
+          <div class="button-col">
+            <button data-action="resume">Resume</button>
+            <button class="ghost" data-action="menu-from-pause">Quit Run</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
