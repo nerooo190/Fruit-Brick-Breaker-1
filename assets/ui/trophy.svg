@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+    <defs>
+      <linearGradient id="g_trophy" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#fff1a0" />
+        <stop offset="0.45" stop-color="#ffd24d" />
+        <stop offset="1" stop-color="#dda11e" />
+      </linearGradient>
+    </defs>
+    <path d="M19 10h26v6c0 8-5 15-13 16-8-1-13-8-13-16v-6z" fill="url(#g_trophy)" />
+    <path d="M15 14h-7c0 7 3 11 9 12M49 14h7c0 7-3 11-9 12" stroke="#ffd24d" stroke-width="3" stroke-linecap="round" />
+    <rect x="26" y="30" width="12" height="10" rx="2" fill="#ffd24d" />
+    <rect x="22" y="40" width="20" height="6" rx="3" fill="#c9981c" />
+  </svg>
